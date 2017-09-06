@@ -9,3 +9,5 @@ To create objects of the classes involved in a circular dependency we need to cr
 In the code you'll find two classes:
 * ClassA_NeedsB: a class that has a reference to ClassB_NeedsA
 * ClassB_NeedsA: a class that has a reference to ClassA_NeedsB
+
+Both classes have the @Component annotation to ask Spring to create an object of their type. Once the objects are created Spring authomatically sets the crossed references by calling the corresponding set methods. Note that the @Autowired annotations are not needed since Spring knows that the references must be initialized and it finds the method for doing so. Actually it looks for a method with a name of the form *setAttributeName(AttributeType param)* 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClassB_NeedsA {
     private ClassA_NeedsB classA_needsB;
-    
+
     public void setClassA_NeedsB(ClassA_NeedsB classA_needsB) {
         this.classA_needsB = classA_needsB;
     }
